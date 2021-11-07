@@ -18,7 +18,7 @@ public class AddressBookMain {
         boolean flag = true;
 
         while (flag) {
-            System.out.println("1] Add Contact\n" + "2] Display\n"
+            System.out.println( "1] Add Contact\n" + "2] Display\n"
                     + "3] Edit contact\n" + "4] Delete Contact\n" + "5] Exit\n" + "Enter your Choice\n");
             int option = sc.nextInt();
 
@@ -78,6 +78,24 @@ public class AddressBookMain {
         }
 
     }
+    private void searchPersonByState(String stateName) {
+        // search person by their State
+        for (Map.Entry<String, ContactFunctions> entry : addressBookListMap.entrySet()) {
+            ContactFunctions value = entry.getValue();
+            System.out.println("The Address Book: " + entry.getKey());
+            value.getPersonNameByCity(stateName);
+        }
+    }
+
+    private void searchPersonByCity(String cityName) {
+        // Search person by their  city
+        for (Map.Entry<String, ContactFunctions> entry : addressBookListMap.entrySet()) {
+            ContactFunctions value = entry.getValue();
+            System.out.println("The Address Book: " + entry.getKey());
+            value.getPersonNameByCity(cityName);
+        }
+    }
+
 
     //main method
     public static void main(String[] args) {
@@ -107,6 +125,22 @@ public class AddressBookMain {
                         System.out.println("Address Book Name: " + entry.getKey());
                         value.checkDuplicate();
                     }
+                case 3:
+                    System.out.println("Enter Name of City: ");
+                    String CityName = sc.next();
+                    addressBookMain.searchPersonByCity(CityName);
+                    break;
+
+                case 4: {
+                    System.out.println("Enter Name of State: ");
+                    String StateName = sc.next();
+                    addressBookMain.searchPersonByState(StateName);
+                    break;
+                }
+
+                case 5:
+                    flag = false;
+                    break;
             }
         }
     }

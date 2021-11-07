@@ -7,8 +7,8 @@ public class ContactItems {
     // variable declartion
     private String firstName, lastName, address, city, state, email, zip, phoneNumber;
 
-    public ContactItems(String firstName, String lastName, String address, String city, String state,
-                        String email, String phoneNumber, String zip) {
+    public ContactItems(String firstName, String lastName, String address, String city, String state, String email,
+                        String phoneNumber, String zip) {
         setFirstName(firstName);
         setLastName(lastName);
         setAddress(address);
@@ -90,9 +90,8 @@ public class ContactItems {
 
     // returning person details given by user
     public String toString() {
-        return "ContactPerson [firstName=" + firstName + ", lastName=" + lastName + ", phone=" + phoneNumber + ", city="
-                + city + ", state=" + state + ", zip=" + zip + ", email=" + email + "]";
+        return "ContactPerson [firstName=" + firstName + ", lastName=" + lastName + ", phone=" + phoneNumber
+                + ", city=" + city + ", state=" + state + ", zip=" + zip + ", email=" + email + "]";
     }
 }
-
    

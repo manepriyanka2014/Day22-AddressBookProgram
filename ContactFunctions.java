@@ -30,7 +30,8 @@ public class ContactFunctions {
         System.out.println("Enter Zip code");
         String zip = sc.next();
 
-        ContactItems contactDetails = new ContactItems(firstName, lastName, address, city, state, email, phoneNumber, zip);
+        ContactItems contactDetails = new ContactItems(firstName, lastName, address, city, state, email, phoneNumber,
+                zip);
         contactList.add(contactDetails);
         System.out.println(contactDetails);
 
@@ -42,15 +43,8 @@ public class ContactFunctions {
         for (ContactItems contact : contactList) {
             if (contact.getFirstName().equals(Name)) {
 
-                System.out.println("Select an option to edit\n"
-                        + "1] First Name\n"
-                        + "2] Last Name\n"
-                        + "3] Address\n"
-                        + "4] City\n"
-                        + "5] State\n"
-                        + "6] Email"
-                        + "7] phone Number\n"
-                        + "8] ZIP code\n");
+                System.out.println("Select an option to edit\n" + "1] First Name\n" + "2] Last Name\n" + "3] Address\n"
+                        + "4] City\n" + "5] State\n" + "6] Email" + "7] phone Number\n" + "8] ZIP code\n");
 
                 int choice = sc.nextInt();
                 switch (choice) {
@@ -115,7 +109,7 @@ public class ContactFunctions {
             return false;
     }
 
-    //	Display Contact Details
+    // Display Contact Details
     public boolean Display(String Name) {
         int flag = 0;
         for (ContactItems contact : contactList) {
@@ -141,20 +135,20 @@ public class ContactFunctions {
                 break;
             }
         }
-        if (flag == 1) {
+        if (flag == 1)
             return true;
-        } else {
+        else
             return false;
-        }
     }
 
-
-    /* Check Duplicate Entry bu using set
-     * if first name in the contactLits is same
+    /**
+     * Check Duplicate Entry by
+     * using set if first name in the contactLits is same
      */
     public void checkDuplicate() {
         Set<String> ContactSet = new HashSet<>();
-        Set<ContactItems> filterSet = contactList.stream().filter(n -> !ContactSet.add(n.getFirstName())).collect(Collectors.toSet());
+        Set<ContactItems> filterSet = contactList.stream().filter(n -> !ContactSet.add(n.getFirstName()))
+                .collect(Collectors.toSet());
 
         for (ContactItems contact : filterSet) {
             System.out.println("The Duplicate Contact is: " + contact.getFirstName());
@@ -162,5 +156,3 @@ public class ContactFunctions {
 
     }
 }
-
-  
