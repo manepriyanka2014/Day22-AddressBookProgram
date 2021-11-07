@@ -214,6 +214,12 @@ public class ContactFunctions {
         });
         System.out.println("Number of contact persons in "+nameCityState+" is : "+wrapper.count);
     }
+    // To sort the entries in the address book alphabetically by Person's name
+    public void sortByName() {
+        addressBook.keySet().forEach((String name) -> {
+            addressBook.get(name).stream().sorted(Comparator.comparing(ContactItems::getFirstName))
+                    .collect(Collectors.toList()).forEach(person -> System.out.println(person.toString()));
+        });
+    }
 }
-
 }
