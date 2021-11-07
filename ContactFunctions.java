@@ -215,11 +215,48 @@ public class ContactFunctions {
         System.out.println("Number of contact persons in "+nameCityState+" is : "+wrapper.count);
     }
     // To sort the entries in the address book alphabetically by Person's name
-    public void sortByName() {
+    public void sorting() {
+     Scanner sc=new Scanner(System.in);
+        System.out.println("1. View By first name\n"+"2. View By city\n"+"3. View By state\n"+"4. View by Zip code"+"5. Back");
+        System.out.print("Enter Your choice: ");
+        int userInput= sc.nextInt();
+        switch (userInput){
+            case 1:sortByFirstName();
+                   break;
+            case 2:sortByCity();
+                break;
+            case 3:sortByState();
+                break;
+            case 4:sortByZip();
+                break;
+            case 5:
+                return;
+            default:
+                System.out.println("INVALID CHOICE!");
+        }
+    }
+    public void sortByFirstName() {
         addressBook.keySet().forEach((String name) -> {
             addressBook.get(name).stream().sorted(Comparator.comparing(ContactItems::getFirstName))
                     .collect(Collectors.toList()).forEach(person -> System.out.println(person.toString()));
         });
     }
-}
+    public void sortByCity() {
+        addressBook.keySet().forEach((String name) -> {
+            addressBook.get(name).stream().sorted(Comparator.comparing(ContactItems::getCity))
+                    .collect(Collectors.toList()).forEach(person -> System.out.println(person.toString()));
+        });
+    }
+    public void sortByState() {
+        addressBook.keySet().forEach((String name) -> {
+            addressBook.get(name).stream().sorted(Comparator.comparing(ContactItems::getState))
+                    .collect(Collectors.toList()).forEach(person -> System.out.println(person.toString()));
+        });
+    }
+    public void sortByZip() {
+        addressBook.keySet().forEach((String name) -> {
+            addressBook.get(name).stream().sorted(Comparator.comparing(ContactItems::getZipCode))
+                    .collect(Collectors.toList()).forEach(person -> System.out.println(person.toString()));
+        });
+    }
 }

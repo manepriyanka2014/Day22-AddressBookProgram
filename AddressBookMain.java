@@ -5,6 +5,11 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
+/*
+* Program : Address book program
+* Author : Navalkumar Balingal
+* Date : 28th Sep'21
+* */
 
 public class AddressBookMain {
     private static Scanner scan = new Scanner(System.in);
@@ -49,7 +54,7 @@ public class AddressBookMain {
                     addressBook.contactsCount();
                     break;
                 case 8:
-                    addressBook.sortByName();
+                    addressBook.sorting();
                     break;
                 default:
                     System.out.println("Please enter valid input");
