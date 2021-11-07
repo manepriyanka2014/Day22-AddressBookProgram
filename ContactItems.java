@@ -4,25 +4,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ContactItems {
-    // variable declartion
-    private String firstName, lastName, address, city, state, email, zip, phoneNumber;
-
-    public ContactItems(String firstName, String lastName, String address, String city, String state, String email,
-                        String phoneNumber, String zip) {
-        setFirstName(firstName);
-        setLastName(lastName);
-        setAddress(address);
-        setCity(city);
-        setState(state);
-        setEmail(email);
-        setPhoneNumber(phoneNumber);
-        setZip(zip);
-
-    }
-
-    public ContactItems() {
-
-    }
+    // Variables
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String city;
+    private String state;
+    private String zipCode;
+    private String phoneNumber;
+    private String email;
 
     public String getFirstName() {
         return firstName;
@@ -64,20 +54,12 @@ public class ContactItems {
         this.state = state;
     }
 
-    public String getEmail() {
-        return email;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getZip() {
-        return zip;
-    }
-
-    public void setZip(String zip) {
-        this.zip = zip;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
     public String getPhoneNumber() {
@@ -88,10 +70,21 @@ public class ContactItems {
         this.phoneNumber = phoneNumber;
     }
 
-    // returning person details given by user
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
     public String toString() {
-        return "ContactPerson [firstName=" + firstName + ", lastName=" + lastName + ", phone=" + phoneNumber
-                + ", city=" + city + ", state=" + state + ", zip=" + zip + ", email=" + email + "]";
+        return "\nDetails of " + firstName + " " + lastName + "\n" + "1) First Name   : " + firstName + "\n"
+                + "2) Last Name    : " + lastName + "\n" + "3) Address      : " + address + "\n" + "4) City         : "
+                + city + "\n" + "5) State        : " + state + "\n" + "6) Zip Code     : " + zipCode + "\n"
+                + "7) Phone Number : " + phoneNumber + "\n" + "8) E-mail ID    : " + email + "\n";
     }
 }
-   
+
+    
