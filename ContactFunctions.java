@@ -1,9 +1,6 @@
 package com.addressbook;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ContactFunctions {
@@ -153,6 +150,22 @@ public class ContactFunctions {
         for (ContactItems contact : filterSet) {
             System.out.println("The Duplicate Contact is: " + contact.getFirstName());
         }
+    }
+    // Get Person Name by State
+    public void getPersonNameByState(String State) {
+        List<ContactItems> list  = contactList.stream().filter(p ->p.getState().equals(State)).collect(Collectors.toList());
+        for(ContactItems contact: list){
+            System.out.println("First Name: "+contact.getFirstName());
+            System.out.println("Last Name: "+contact.getLastName());
+        }
 
+    }
+    // Get Person Name by city
+    public void getPersonNameByCity(String cityName) {
+        List<ContactItems> list  = contactList.stream().filter(p ->p.getCity().equals(cityName)).collect(Collectors.toList());
+        for(ContactItems contact: list){
+            System.out.println("First Name: "+contact.getFirstName());
+            System.out.println("Last Name: "+contact.getLastName());
+        }
     }
 }

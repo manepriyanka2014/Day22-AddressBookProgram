@@ -78,25 +78,6 @@ public class AddressBookMain {
         }
 
     }
-    private void searchPersonByState(String stateName) {
-        // search person by their State
-        for (Map.Entry<String, ContactFunctions> entry : addressBookListMap.entrySet()) {
-            ContactFunctions value = entry.getValue();
-            System.out.println("The Address Book: " + entry.getKey());
-            value.getPersonNameByCity(stateName);
-        }
-    }
-
-    private void searchPersonByCity(String cityName) {
-        // Search person by their  city
-        for (Map.Entry<String, ContactFunctions> entry : addressBookListMap.entrySet()) {
-            ContactFunctions value = entry.getValue();
-            System.out.println("The Address Book: " + entry.getKey());
-            value.getPersonNameByCity(cityName);
-        }
-    }
-
-
     //main method
     public static void main(String[] args) {
         AddressBookMain addressBookMain = new AddressBookMain();
@@ -142,6 +123,24 @@ public class AddressBookMain {
                     flag = false;
                     break;
             }
+        }
+    }
+
+    private void searchPersonByState(String stateName) {
+        // TODO Auto-generated method stub
+        for (Map.Entry<String, ContactFunctions> entry : addressBookListMap.entrySet()) {
+            ContactFunctions value = entry.getValue();
+            System.out.println("The Address Book: " + entry.getKey());
+            value.getPersonNameByState(stateName);
+        }
+    }
+
+    private void searchPersonByCity(String cityName) {
+        // TODO Auto-generated method stub
+        for (Map.Entry<String, ContactFunctions> entry : addressBookListMap.entrySet()) {
+            ContactFunctions value = entry.getValue();
+            System.out.println("The Address Book: " + entry.getKey());
+            value.getPersonNameByCity(cityName);
         }
     }
 }
